@@ -1,6 +1,8 @@
 # Docker 命令
 
+
 ## 命令格式
+---
 
 ```
 ~ docker --help
@@ -84,6 +86,7 @@ docker container ls
 
 
 ## 容器命令
+---
 
 命令格式
 ```
@@ -259,7 +262,7 @@ docker logs [OPTIONS] CONTAINER
 - -f实时输出，类似于tail -f
 
 
-## 显示容器中的进程
+### 显示容器中的进程
 
 命令格式
 
@@ -309,4 +312,82 @@ docker container prune [OPTIONS]
 - --filter执行过滤删除
 
 
-## 容器管理
+## 镜像管理
+---
+
+
+### 镜像列表
+命令格式
+
+```
+# Management Commands
+docker image ls
+
+# 旧的命令格式如下：
+docker images
+```
+
+
+### 查看镜像详情
+命令格式
+
+```
+# Management Commands
+docker image inspect ubuntu
+
+# 旧的命令格式如下：
+docker inspect ubuntu
+```
+
+
+### 搜索镜像
+
+```
+docker search ubuntu
+```
+
+
+### 拉取镜像
+
+```
+# Management Commands
+docker image pull [OPTIONS] NAME[:TAG|@DIGEST]
+
+# 旧的命令格式如下：
+docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+```
+
+
+### 构建镜像
+在修改容器的基础上构建镜像
+
+```
+# Management Commands
+docker container commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+
+# 旧的命令格式如下：
+docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+```
+
+
+### BUILD镜像
+从一个 Dockerfile 文件中自动读取指令构建一个新的镜像。
+
+```
+docker image build [OPTIONS] PATH | URL
+```
+
+
+### 删除镜像
+
+```
+# Management Commands
+docker image rm ubuntu:latest
+
+# 旧的命令格式如下：
+docker rmi ubuntu:latest
+```
+
+
+
+
